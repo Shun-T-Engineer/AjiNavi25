@@ -16,12 +16,14 @@ public class RemoveController {
 	@PostMapping("/remove-review")
 	public String removeReview(@Validated @ModelAttribute ReviewRemoveForm form, 
 													BindingResult result) {
+		
+		System.out.println(form);
 
 		if(result.hasErrors()) {
 			throw new IllegalArgumentException("**removeReview()**");
 		}
 		
-		return "confirem-remove-review";
+		return "confirm-remove-review";
 	}
 	
 	@PostMapping("/confirm-remove-review")
